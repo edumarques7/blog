@@ -1,0 +1,31 @@
+<div class="container">
+    <hr>
+    <h1 style="text-align:center;">Exercicio Rails</h1>
+    <h1><center>Exercicio Rails 2</center></h1>
+    <hr>
+    <% @estudantes.each do |estudante| %>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<%= estudante[:nome] %>" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <%= estudante[:nome] %>
+                </button>
+                 </h2>
+                <div id="flush-collapse<%= estudante[:nome] %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p><%= estudante[:idade] %></p>
+                    <p><%= estudante[:curso] %></p>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+    <% end %>
+
+    <a href="/home">Home</a>
+
+    <%= link_to "Home", home_path %>
+</div>
+
+
